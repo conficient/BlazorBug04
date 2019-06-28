@@ -4,10 +4,6 @@
 </div>
 
 @code { // binding parameters
-protected override void OnInit()
-{
-    base.OnInit();
-}
 
 private string _value = null;
 
@@ -15,7 +11,7 @@ private string _value = null;
     {
         _value = value;
         // confirms this does get called when the InputText is set
-        Console.WriteLine($"Setting value to '{value}'"); 
+        Console.WriteLine($"Setting value to '{value}'");
     }
 }
 
