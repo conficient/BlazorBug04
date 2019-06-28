@@ -3,6 +3,8 @@ Sample app demonstrating nested binding using `@bind-XXX` syntax does not work
 
 ![Demo of bug](BlazorBug04.gif?raw=true "Bug")
 
+Logged as [#11679](https://github.com/aspnet/AspNetCore/issues/11679)
+
 ### Description
 
 The form on the Home page has two controls inside an `EditForm` component.
