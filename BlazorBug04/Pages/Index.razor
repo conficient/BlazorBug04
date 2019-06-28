@@ -14,14 +14,18 @@ Welcome to your new app.
 <p>B = @model.B</p>
 @code
 {
-    /// <summary>
-    /// Data class
-    /// </summary>
-    public class Model
-    {
-        public string A { get; set; }
-        public string B { get; set; }
-    }
+/// <summary>
+/// Data class
+/// </summary>
+public class Model
+{
+    public string A { get; set; }
+    public string B { get; set; }
+}
 
-    private Model model = new Model();
+private Model model = new Model()
+{
+    A = "initial A",
+    B = "intial B"
+};
 }
