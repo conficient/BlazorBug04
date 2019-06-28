@@ -9,7 +9,15 @@ protected override void OnInit()
     base.OnInit();
 }
 
-[Parameter] public string Value { get; private set; }
+private string _value = null;
+
+[Parameter] public string Value { get => _value; private set
+    {
+        _value = value;
+        // confirms this does get called when the InputText is set
+        Console.WriteLine($"Setting value to '{value}'"); 
+    }
+}
 
 [Parameter] public EventCallback<string> ValueChanged { get; private set; }
 
