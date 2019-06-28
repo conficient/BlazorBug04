@@ -3,12 +3,15 @@
     <InputText @bind-Value="@Value" />
 </div>
 
-@code {
-    // binding parameters
+@code { // binding parameters
+protected override void OnInit()
+{
+    base.OnInit();
+}
 
-    [Parameter] string Value { get; set; }
+[Parameter] public string Value { get; private set; }
 
-    [Parameter] EventCallback<string> ValueChanged { get; set; }
+[Parameter] public EventCallback<string> ValueChanged { get; private set; }
 
-    [Parameter] string Label { get; set; }
+[Parameter] string Label { get; set; }
 }
