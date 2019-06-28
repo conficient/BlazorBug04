@@ -1,0 +1,27 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<EditForm Model="@model">
+    A: <InputText @bind-Value="@model.A" /><br />
+    <MyControl @bind-Value="@model.B" Label="B" />
+</EditForm>
+
+<b>Binding check:</b>
+<p>A = @model.A</p>
+<p>B = @model.B</p>
+@code
+{
+    /// <summary>
+    /// Data class
+    /// </summary>
+    public class Model
+    {
+        public string A { get; set; }
+        public string B { get; set; }
+    }
+
+    private Model model = new Model();
+}

@@ -1,0 +1,14 @@
+﻿<div class="form-control">
+    <label>@Label</label>
+    <InputText @bind-Value="@Value" />
+</div>
+
+@code {
+    // binding parameters
+
+    [Parameter] string Value { get; set; }
+
+    [Parameter] EventCallback<string> ValueChanged { get; set; }
+
+    [Parameter] string Label { get; set; }
+}
