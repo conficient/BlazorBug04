@@ -33,7 +33,7 @@ private string _value;
         _value = value;
         ValueChanged.InvokeAsync(value);
     }
-}_
+}
 ```
 Although the `InvokeAsync` is an async method, it's inside a synchronous setter, so this is 
 a fire-and-forget approach.
