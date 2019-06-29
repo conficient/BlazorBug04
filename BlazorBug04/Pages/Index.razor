@@ -6,7 +6,7 @@ Welcome to your new app.
 
 <EditForm Model="@model">
     A: <InputText @bind-Value="@model.A" /><br />
-    <MyControl @bind-Value="@model.B" Label="B" />
+    <MyControl @bind-Value="@model.B"  Label="B" />
 </EditForm>
 
 <b>Binding check:</b>
@@ -26,6 +26,7 @@ public class Model
 private Model model = new Model()
 {
     A = "initial A",
-    B = "intial B"
+    B = "initial B"
 };
+
 }

@@ -3,19 +3,18 @@
     <InputText @bind-Value="@Value" />
 </div>
 
-@code { // binding parameters
-
-private string _value = null;
-
-[Parameter] public string Value { get => _value; private set
+@code { 
+    // binding parameters
+    private string _value;
+    [Parameter]
+    public string Value
     {
-        _value = value;
-        // confirms this does get called when the InputText is set
-        Console.WriteLine($"Setting value to '{value}'");
+        get => _value;
+        private set => ValueChangedHelper.Set<string>(ref _value, value, ValueChanged);
     }
-}
 
-[Parameter] public EventCallback<string> ValueChanged { get; private set; }
+    [Parameter] public EventCallback<string> ValueChanged { get; private set; }
 
-[Parameter] public string Label { get; private set; }
+    [Parameter] public string Label { get; private set; }
+
 }
