@@ -31,12 +31,15 @@ private string _value;
     set 
     {
         _value = value;
-        ValueChanged.InvokeAsync(value);
+        _ = ValueChanged.InvokeAsync(value);
     }
 }
 ```
 Although the `InvokeAsync` is an async method, it's inside a synchronous setter, so this is 
-a fire-and-forget approach.
+a fire-and-forget approach. I added the `_ = ` to this method
+since I assume that if it's not there, it's possible
+the compiler might optimize out this method. It's present
+in Microsoft's code too.
 
 ### Solution
 
